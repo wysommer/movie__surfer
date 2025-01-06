@@ -8,12 +8,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-#landing {
-    background-image: url(./assets/music.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+
+/* 
+
+NAV
+
+*/
 
 .top__bar {
     width: 100%;
@@ -51,6 +51,22 @@ nav {
     font-weight: 500;
 }
 
+/* 
+
+LANDING
+
+*/
+
+.background__img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 .search__form {
     display: flex;
     align-items: center;
@@ -82,10 +98,95 @@ nav {
 }
 
 .search__submit:hover {
-    background-color: transparent;
+    background-color: rgba(255, 187, 0, 0.7);
     border: 1px solid orange;
-    color: orange;
+    font-weight: bold;
+    color: #fff;
 }
+
+/* 
+
+SEARCH RESULTS
+
+*/
+
+.search__results--container {
+    padding: 24px 0;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search__results--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search__result {
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 12px;
+    margin: 12px 6px;
+    border-radius: 24px;
+    box-shadow: 4px 4px 16px 4px #2f2f2f67;
+    max-width: 230px;
+}
+
+.result__img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.search__result--content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 24px 0;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__link--li {
+    list-style: none;
+    padding: 12px;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 
+
+MOBILE
+
+*/
 
 @media (max-width: 768px) {
     .nav__list--li {
@@ -99,13 +200,26 @@ nav {
     .logo {
         max-width: 180px;
     }
+
+    .search__results--list {
+        justify-content: center;
+    }
+
+    .search__result {
+        width: 40%;
+        margin: 4px;
+    }
+
+    .result__title {
+        font-size: 18px;
+    }
+
+    .result__img {
+        max-width: 100px;
+    }
 }
 
 @media (max-width: 480px) {
-    #landing {
-        background-size: 150%;
-    }
-    
     .logo {
         max-width: 140px;
     }
@@ -117,11 +231,20 @@ nav {
     .nav__list {
         padding-right: 12px;
     }
+
+    .background__img {
+        height: 130%;
+    }
+
 }
 
 @media (max-width: 390px) {
     .nav__link {
         font-size: 16px;
+    }
+    
+    .background__img {
+        height: 180%;
     }
 }
 
