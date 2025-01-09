@@ -12,8 +12,10 @@ async function main(event) {
   const searchResultsListEl = document.querySelector(".search__results--list");
 
   searchResultsListEl.innerHTML = movieSearchResults
+    .filter((_movie, index) => index < 6)
     .map(
-      (movie, index) => index < 6 && 
+      (movie, index) =>
+        index < 6 &&
         `<li class="search__result">
                 <div class="search__result--content">
                     <img src="${movie.Poster}" alt="movie-poster" class="result__img">
