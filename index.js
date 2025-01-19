@@ -2,7 +2,7 @@ async function main(event) {
   event.preventDefault();
   const searchTerm = event.srcElement[0].value;
   const movies = await fetch(
-    `http://www.omdbapi.com/?apikey=88992ddf&s=${searchTerm}`
+    `https://www.omdbapi.com/?apikey=88992ddf&s=${searchTerm}`
   );
   const movieData = await movies.json();
   const movieSearchResults = movieData.Search;
